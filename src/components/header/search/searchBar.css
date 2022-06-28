@@ -18,3 +18,17 @@
   font-family: AppleSDGothicNeo;
   color: #727272;
 }
+
+.search-bar > button {
+  width: 54px;
+  height: 32px;
+  font-size: 0px;
+  position: absolute;
+  top: -1px;
+  right: 0px;
+}
+
+.search-bar > button > img {
+  width: 31px;
+  height: 14px;
+}
