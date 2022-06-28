@@ -1,10 +1,10 @@
-import { SearchBar } from "./SearchBar";
+import { Search } from "./search/Search";
 import "./appHeader.css";
 
 export function AppHeader() {
   return (
     <header className="app-header">
-      <SearchBar />
+      <Search />
     </header>
   );
 }
