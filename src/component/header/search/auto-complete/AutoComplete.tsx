@@ -1,15 +1,32 @@
+import { useAtomValue } from "jotai";
+import { isUndefined } from "../../../../shared/util/fs";
+import { searchWordAtom } from "../searchBar.atom";
 import "./autoComplete.css";
+import { useSearchAutoComplete } from "./autoComplete.hook";
 import { AutoCompleteItem } from "./AutoCompleteItem";
 
 export function AutoComplete() {
+  const searchWord = useAtomValue(searchWordAtom);
+  const { data: searchResult } = useSearchAutoComplete(searchWord);
+
+  if (isUndefined(searchResult)) {
+    return null;
+  }
+
+  const { data: autoCompleteList } = searchResult;
+
   return (
     <div className="auto-complete">
       <div className="list">
         <ul>
-          <AutoCompleteItem />
-          <AutoCompleteItem />
-          <AutoCompleteItem />
-          <AutoCompleteItem />
+          {autoCompleteList.map((autoComplete) => (
+            <AutoCompleteItem
+              key={autoComplete.id}
+              username={autoComplete.name}
+              level={autoComplete.level}
+              imageUrl={autoComplete.profile_image_url}
+            />
+          ))}
         </ul>
       </div>
     </div>
