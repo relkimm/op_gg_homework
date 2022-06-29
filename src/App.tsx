@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import { AppHeader } from "./components/header/AppHeader";
+import { AppHeader } from "./component/header/AppHeader";
 import "./app.css";
 
 export function App() {
