@@ -6,8 +6,8 @@ export function Search() {
   return (
     <div className="search">
       <SearchBar />
-      {/* <RecentSearch /> */}
-      <AutoComplete />
+      <RecentSearch />
+      {/* <AutoComplete /> */}
     </div>
   );
 }

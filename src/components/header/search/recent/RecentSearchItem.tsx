@@ -1,13 +1,30 @@
-import { DeleteButton } from "./DeleteButton";
+import { useSetAtom } from "jotai";
+import { deleteRecentAtom } from "./recentSearch.atom";
 import "./recentSearch.css";
 
-export function RecentSearchItem() {
+interface RecentSearchItemProps {
+  idx: number;
+  word: string;
+}
+
+export function RecentSearchItem({ idx, word }: RecentSearchItemProps) {
+  const deleteRecent = useSetAtom(deleteRecentAtom);
+
+  const onClickDelete = () => {
+    deleteRecent(idx);
+  };
+
   return (
     <li className="item">
       <a>
-        <span>자메이카의영혼</span>
+        <span>{word}</span>
       </a>
-      <DeleteButton />
+      <button onClick={onClickDelete}>
+        <img
+          src="https://s-lol-web.op.gg/images/site/icon-history-delete.png"
+          alt=""
+        />
+      </button>
     </li>
   );
 }

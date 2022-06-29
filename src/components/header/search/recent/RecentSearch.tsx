@@ -1,7 +1,11 @@
+import { useAtomValue } from "jotai";
+import { fiveRecentAtom } from "./recentSearch.atom";
 import { RecentSearchItem } from "./RecentSearchItem";
 import "./recentSearch.css";
 
 export function RecentSearch() {
+  const fiveRecent = useAtomValue(fiveRecentAtom);
+
   return (
     <div className="recent-search">
       <div className="menu">
@@ -10,11 +14,13 @@ export function RecentSearch() {
       </div>
       <div className="list">
         <ul>
-          <RecentSearchItem />
-          <RecentSearchItem />
-          <RecentSearchItem />
-          <RecentSearchItem />
-          <RecentSearchItem />
+          {fiveRecent.map((recent, idx) => (
+            <RecentSearchItem
+              key={`${recent}_${idx}`}
+              idx={idx}
+              word={recent}
+            />
+          ))}
         </ul>
       </div>
     </div>
