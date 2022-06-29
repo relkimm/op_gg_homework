@@ -1,4 +1,5 @@
 import { useAtomValue } from "jotai";
+import { useDebounce } from "../../../../shared/hook/debounce";
 import { isUndefined } from "../../../../shared/util/fs";
 import { searchWordAtom } from "../searchBar.atom";
 import "./autoComplete.css";
@@ -7,7 +8,8 @@ import { AutoCompleteItem } from "./AutoCompleteItem";
 
 export function AutoComplete() {
   const searchWord = useAtomValue(searchWordAtom);
-  const { data: searchResult } = useSearchAutoComplete(searchWord);
+  const debounced = useDebounce(searchWord);
+  const { data: searchResult } = useSearchAutoComplete(debounced);
 
   if (isUndefined(searchResult)) {
     return null;
