@@ -1,6 +1,6 @@
 import { useAtomValue } from "jotai";
 import { useDebounce } from "../../../../shared/hook/debounce";
-import { isUndefined } from "../../../../shared/util/fs";
+import { isUndefined, take } from "../../../../shared/util/fs";
 import { searchWordAtom } from "../searchBar.atom";
 import "./autoComplete.css";
 import { useSearchAutoComplete } from "./autoComplete.hook";
@@ -21,7 +21,7 @@ export function AutoComplete() {
     <div className="auto-complete">
       <div className="list">
         <ul>
-          {autoCompleteList.map((autoComplete) => (
+          {take(4, autoCompleteList).map((autoComplete) => (
             <AutoCompleteItem
               key={autoComplete.id}
               username={autoComplete.name}
