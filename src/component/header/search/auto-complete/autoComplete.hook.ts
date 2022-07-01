@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { searchAutoComplete } from "../../../../data/search/searchApi";
+import { searchAutoComplete } from "../../../../data/api/searchApi";
 import { queryKeys } from "../../../../shared/query/queryKeys";
 
 export const useSearchAutoComplete = (keyword: string = "") => {

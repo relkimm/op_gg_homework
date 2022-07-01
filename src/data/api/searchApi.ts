@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AxiosReturn } from "../axios";
-import { AutoComplete } from "./AutoComplete";
-import { SearchResult } from "./SearchResult";
+import { AutoComplete } from "../model/AutoComplete";
+import { SearchResult } from "../model/SearchResult";
 
 export const searchAutoComplete = (keyword: string) => {
   const url = `/autocomplete?keyword=${keyword}`;
