@@ -1,5 +1,7 @@
+import { useCallback } from "react";
 import { useAtomValue } from "jotai";
 import { useDebounce } from "../../../../hook/debounce";
+import { useGoPush } from "../../../../hook/route";
 import { isUndefined, take } from "../../../../util/fs";
 import { searchWordAtom } from "../searchBar.atom";
 import "./autoComplete.css";
@@ -10,6 +12,14 @@ export function AutoComplete() {
   const searchWord = useAtomValue(searchWordAtom);
   const debounced = useDebounce(searchWord);
   const { data: searchResult } = useSearchAutoComplete(debounced);
+  const goPush = useGoPush();
+
+  const onClickItem = useCallback(
+    (username: string) => {
+      goPush(`/summoner/${username}`);
+    },
+    [goPush]
+  );
 
   if (isUndefined(searchResult)) {
     return null;
@@ -27,6 +37,7 @@ export function AutoComplete() {
               username={autoComplete.name}
               level={autoComplete.level}
               imageUrl={autoComplete.profile_image_url}
+              onClick={onClickItem}
             />
           ))}
         </ul>

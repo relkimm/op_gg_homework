@@ -4,16 +4,18 @@ interface AutoCompleteItemProps {
   username: string;
   level: number;
   imageUrl: string;
+  onClick: (username: string) => void;
 }
 
 export function AutoCompleteItem({
   username,
   level,
   imageUrl,
+  onClick,
 }: AutoCompleteItemProps) {
   return (
     <li className="item">
-      <a>
+      <a onClick={() => onClick(username)}>
         <div className="avatar-36">
           <img src={imageUrl} alt="" />
         </div>

@@ -36,3 +36,9 @@ export const isUndefined = (x: unknown): x is undefined => {
 export const isDefined = <T>(x: T | undefined): x is T => {
   return x !== undefined;
 };
+
+export const compose =
+  (...fns: Function[]) =>
+  <T>(init: T) => {
+    return fns.reduce((v, fn) => fn(v), init);
+  };
