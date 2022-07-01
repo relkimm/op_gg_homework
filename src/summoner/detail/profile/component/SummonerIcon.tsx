@@ -1,8 +1,21 @@
+import React from "react";
+import { useParams } from "react-router-dom";
+import { DefaultSummonerIcon } from "../../../../shared/constant";
+import { SummonerDetailParams } from "../../summonerDetail.params";
+import { useFindSummoner } from "../summonerProfile.hook";
+
 export function SummonerIcon() {
+  const { username } = useParams<SummonerDetailParams>();
+  const { data: summoner } = useFindSummoner(username);
+
+  const onError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.src = DefaultSummonerIcon();
+  };
+
   return (
     <div className="icon">
-      <img src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon2.jpg?image=q_auto&image=q_auto,f_webp,w_auto&v=1656329025328" />
-      <span>38</span>
+      <img src={summoner?.profileImageUrl} onError={onError} />
+      <span>{summoner?.level}</span>
     </div>
   );
 }

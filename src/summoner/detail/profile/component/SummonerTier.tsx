@@ -1,32 +1,18 @@
+import { useParams } from "react-router-dom";
+import { SummonerDetailParams } from "../../summonerDetail.params";
+import { useFindSummoner } from "../summonerProfile.hook";
+import { TierItem } from "./TierItem";
+
 export function SummonerTier() {
+  const { username } = useParams<SummonerDetailParams>();
+  const { data: summoner } = useFindSummoner(username);
+
   return (
     <div className="tier">
       <ul>
-        <li>
-          <span>
-            <b>S3</b> Bronze
-          </span>
-        </li>
-        <li>
-          <span>
-            <b>S3</b> Bronze
-          </span>
-        </li>
-        <li>
-          <span>
-            <b>S3</b> Bronze
-          </span>
-        </li>
-        <li>
-          <span>
-            <b>S3</b> Bronze
-          </span>
-        </li>
-        <li>
-          <span>
-            <b>S3</b> Bronze
-          </span>
-        </li>
+        {summoner?.previousTiers.map((tier) => (
+          <TierItem season={tier.season} tier={tier.tier} />
+        ))}
       </ul>
     </div>
   );
