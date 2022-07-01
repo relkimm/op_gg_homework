@@ -1,0 +1,87 @@
+.summoner-profile {
+  width: 100%;
+  height: 175px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.tier {
+  height: 41px;
+  padding-top: 15px;
+  padding-left: 211px;
+  padding-bottom: 6px;
+}
+
+.tier > ul {
+  display: flex;
+}
+
+.tier > ul > li {
+  width: 58px;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 7px;
+  border-radius: 2px;
+  border: solid 1px #d0d3d4;
+  background-color: #e0e3e3;
+}
+
+.tier > ul > li > span {
+  display: block;
+  font-size: 11px;
+  font-family: Helvetica;
+  letter-spacing: -0.42px;
+  color: #657070;
+  text-align: center;
+}
+
+.profile-main {
+  display: flex;
+  height: 134px;
+}
+
+.profile-main .icon {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-left: 200px;
+  padding: 11px 11px 9px 9px;
+}
+
+.profile-main .icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-main .icon > span {
+  position: absolute;
+  bottom: 0px;
+  left: 38px;
+  width: 44px;
+  height: 24px;
+  background: url(https://s-lol-web.op.gg/static/images/site/summoner/bg-levelbox.png);
+  font-size: 14px;
+  font-family: Helvetica;
+  text-align: center;
+  line-height: 24px;
+  color: #eabd56;
+}
+
+.profile-main .profile-inner {
+  padding-top: 11px;
+  padding-left: 17px;
+}
+
+.profile-main .profile-inner .username {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: AppleSDGothicNeo;
+  letter-spacing: -0.77px;
+  color: #242929;
+}
+
+.profile-main .profile-inner .ranking {
+  font-size: 11px;
+  font-family: AppleSDGothicNeo;
+  letter-spacing: -0.42px;
+  color: #657070;
+}
