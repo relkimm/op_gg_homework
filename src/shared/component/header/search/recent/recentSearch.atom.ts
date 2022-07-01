@@ -1,6 +1,6 @@
 import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
-import { take } from "../../../../shared/util/fs";
+import { take } from "../../../../util/fs";
 
 const recentFromStorage = () => {
   const recentSearch = localStorage.getItem("recent_search");

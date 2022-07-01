@@ -1,6 +1,6 @@
 import { useAtomValue } from "jotai";
-import { useDebounce } from "../../../../shared/hook/debounce";
-import { isUndefined, take } from "../../../../shared/util/fs";
+import { useDebounce } from "../../../../hook/debounce";
+import { isUndefined, take } from "../../../../util/fs";
 import { searchWordAtom } from "../searchBar.atom";
 import "./autoComplete.css";
 import { useSearchAutoComplete } from "./autoComplete.hook";
