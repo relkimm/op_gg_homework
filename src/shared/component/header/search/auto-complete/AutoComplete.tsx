@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtomValue } from "jotai";
 import { useDebounce } from "../../../../hook/debounce";
 import { isUndefined, take } from "../../../../util/fs";
 import { searchWordAtom } from "../searchBar.atom";
@@ -7,7 +7,6 @@ import "./autoComplete.css";
 import { useSearchAutoComplete } from "./autoComplete.hook";
 import { AutoCompleteItem } from "./AutoCompleteItem";
 import { useSearch } from "../search.hook";
-import { openAutoCompleteAtom } from "./autoComplete.atom";
 
 export function AutoComplete() {
   const searchWord = useAtomValue(searchWordAtom);

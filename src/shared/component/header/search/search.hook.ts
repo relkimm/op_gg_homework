@@ -22,6 +22,6 @@ export const useSearch = () => {
         goPush(`/summoner/${searchWord}`);
       }
     },
-    [saveRecent, goPush]
+    [setOpenRecent, setOpenAutoComplete, setSearchWord, saveRecent, goPush]
   );
 };

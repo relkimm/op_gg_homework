@@ -10,8 +10,12 @@ export function SummonerTier() {
   return (
     <div className="tier">
       <ul>
-        {summoner?.previousTiers.map((tier) => (
-          <TierItem season={tier.season} tier={tier.tier} />
+        {summoner?.previousTiers.map((tier, idx) => (
+          <TierItem
+            key={`${tier.season}_${idx}`}
+            season={tier.season}
+            tier={tier.tier}
+          />
         ))}
       </ul>
     </div>

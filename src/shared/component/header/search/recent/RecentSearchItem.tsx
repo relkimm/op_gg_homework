@@ -1,6 +1,3 @@
-import { useSetAtom } from "jotai";
-import { useGoPush } from "../../../../hook/route";
-import { deleteRecentAtom } from "./recentSearch.atom";
 import "./recentSearch.css";
 
 interface RecentSearchItemProps {
