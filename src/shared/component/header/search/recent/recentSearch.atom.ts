@@ -21,6 +21,8 @@ export const recentAtom = atomWithStorage<string[]>(
   recentFromStorage()
 );
 
+export const openRecentAtom = atom<boolean>(false);
+
 export const fiveRecentAtom = atom((get) => take(5, get(recentAtom)));
 
 export const saveRecentAtom = atom(null, (get, set, newItem: string) => {
