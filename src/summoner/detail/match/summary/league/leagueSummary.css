@@ -1,0 +1,57 @@
+.league-summary {
+  height: 230px;
+  margin-bottom: 8px;
+}
+
+.league-summary .solo-rank {
+  display: flex;
+  height: 124px;
+  margin-bottom: 8px;
+  padding-top: 10px;
+  padding-left: 8px;
+  padding-bottom: 10px;
+  background-color: #f2f2f2;
+  border-radius: 2px;
+  border: solid 1px #cdd2d2;
+}
+
+.league-summary .solo-rank .icon {
+  width: 104px;
+  height: 104px;
+}
+
+.league-summary .solo-rank .icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.league-summary .solo-rank .info {
+  padding-top: 6px;
+  padding-left: 8px;
+}
+
+.league-summary .team-rank {
+  display: flex;
+  margin-bottom: 8px;
+  padding-top: 17px;
+  padding-left: 28px;
+  padding-bottom: 17px;
+  background-color: #f2f2f2;
+  border-radius: 2px;
+  border: solid 1px #cdd2d2;
+}
+
+.league-summary .team-rank .icon {
+  width: 64px;
+  height: 64px;
+}
+
+.league-summary .team-rank .icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.league-summary .team-rank .info {
+  padding-top: 17px;
+  padding-left: 28px;
+}
