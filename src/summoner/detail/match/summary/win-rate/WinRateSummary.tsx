@@ -1,11 +1,12 @@
-import { ChamWinRate } from "./ChamWinRate";
-import { RankWinRate } from "./RankWinRate";
+import { MainWinRate } from "./main/MainWinRate";
+import { SubWinRate } from "./sub/SubWinRate";
+import "./winRateSummary.css";
 
 export function WinRateSummary() {
   return (
-    <>
-      <ChamWinRate />
-      <RankWinRate />
-    </>
+    <div className="win-rate-summary">
+      <MainWinRate />
+      <SubWinRate />
+    </div>
   );
 }
