@@ -13,3 +13,7 @@ export const isBlank = (target: string): boolean => {
 export const isNotBlank = (target: string): boolean => {
   return !isBlank(target);
 };
+
+export const len = (target: string): number => {
+  return target.length;
+};

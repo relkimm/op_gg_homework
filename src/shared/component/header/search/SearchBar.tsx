@@ -1,7 +1,8 @@
-import { useAtom, useSetAtom } from "jotai";
 import React from "react";
+import { useAtom, useSetAtom } from "jotai";
+import _ from "lodash";
 import { compose } from "../../../util/fs";
-import { isNotBlank, trim } from "../../../util/string";
+import { isNotBlank, len, trim } from "../../../util/string";
 import { openAutoCompleteAtom } from "./auto-complete/autoComplete.atom";
 import { openRecentAtom } from "./recent/recentSearch.atom";
 import { useSearch } from "./search.hook";
@@ -38,8 +39,18 @@ export function SearchBar() {
     }
   };
 
-  const onFocus = (_: React.FocusEvent<HTMLInputElement>) => {
-    setOpenRecent(true);
+  const onFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    const length = _.flow(trim, len)(searchWord);
+    if (length > 0) {
+      setOpenAutoComplete(true);
+    } else {
+      setOpenRecent(true);
+    }
+  };
+
+  const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    setOpenRecent(false);
+    setOpenAutoComplete(false);
   };
 
   return (
@@ -50,6 +61,7 @@ export function SearchBar() {
         onChange={onChange}
         onKeyPress={onEnterSearch}
         onFocus={onFocus}
+        onBlur={onBlur}
         placeholder="소환사명,챔피언…"
       />
       <button onClick={onClickSearch}>
