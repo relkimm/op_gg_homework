@@ -17,3 +17,9 @@ export const isNotBlank = (target: string): boolean => {
 export const len = (target: string): number => {
   return target.length;
 };
+
+export const fixed = (fractionDigits: number) => (target: number) => {
+  return target.toFixed(fractionDigits);
+};
+
+export const fixed1 = fixed(1);

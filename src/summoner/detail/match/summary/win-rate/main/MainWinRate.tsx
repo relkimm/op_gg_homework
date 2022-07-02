@@ -1,9 +1,9 @@
+import { useAtomValue } from "jotai";
+import { activeMenuAtom } from "./mainWinRate.atom";
 import { MainWinRateMenu } from "./MainWinRateMenu";
 import { MainChampWinRate } from "./champ/MainChampWinRate";
 import { MainRankWinRate } from "./rank/MainRankWinRate";
 import "./mainWinRate.css";
-import { useAtomValue } from "jotai";
-import { activeMenuAtom } from "./mainWinRate.atom";
 
 export function MainWinRate() {
   const activeMenu = useAtomValue(activeMenuAtom);

@@ -1,0 +1,71 @@
+.champ-item {
+  display: flex;
+  padding-left: 15px;
+  border-bottom: solid 1px #cdd2d2;
+}
+
+.champ-item .avatar-md {
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+
+.champ-item .champ-info {
+  margin-top: 11px;
+  margin-bottom: 10px;
+  margin-right: 22px;
+}
+
+.champ-info .name {
+  font-size: 13px;
+  font-family: AppleSDGothicNeo;
+  font-weight: bold;
+  color: #5e5e5e;
+}
+
+.champ-info .cs {
+  font-size: 11px;
+  font-family: Helvetica;
+  color: #879292;
+}
+
+.champ-item .kda-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 21px;
+}
+
+.kda-info .average {
+  font-size: 13px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #5e5e5e;
+  text-align: center;
+}
+
+.kda-info .detail {
+  font-size: 11px;
+  font-family: Helvetica;
+  color: #879292;
+  text-align: center;
+}
+
+.champ-item .game-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.game-info .average {
+  font-size: 13px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #5e5e5e;
+  text-align: center;
+}
+
+.game-info .count {
+  font-size: 11px;
+  font-family: Helvetica;
+  color: #879292;
+  text-align: center;
+}

@@ -1,3 +1,4 @@
+import { Avatar } from "../../../avatar/Avatar";
 import "./autoComplete.css";
 
 interface AutoCompleteItemProps {
@@ -16,9 +17,7 @@ export function AutoCompleteItem({
   return (
     <li className="item">
       <a onClick={() => onClick(username)}>
-        <div className="avatar-36">
-          <img src={imageUrl} alt="" />
-        </div>
+        <Avatar size="sm" imageUrl={imageUrl} />
         <div className="info">
           <div className="username">
             <span>{username}</span>
