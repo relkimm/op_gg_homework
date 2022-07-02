@@ -20,6 +20,7 @@ export function SearchBar() {
       setOpenAutoComplete(true);
     } else {
       setOpenAutoComplete(false);
+      setOpenRecent(true);
     }
     setSearchWord(e.target.value);
   };
@@ -48,11 +49,6 @@ export function SearchBar() {
     }
   };
 
-  const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    setOpenRecent(false);
-    setOpenAutoComplete(false);
-  };
-
   return (
     <div className="search-bar">
       <input
@@ -61,7 +57,6 @@ export function SearchBar() {
         onChange={onChange}
         onKeyPress={onEnterSearch}
         onFocus={onFocus}
-        onBlur={onBlur}
         placeholder="소환사명,챔피언…"
       />
       <button onClick={onClickSearch}>

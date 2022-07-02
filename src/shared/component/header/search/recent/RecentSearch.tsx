@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import {
   deleteRecentAtom,
@@ -8,12 +8,19 @@ import {
 import { RecentSearchItem } from "./RecentSearchItem";
 import { useGoPush } from "../../../../hook/route";
 import "./recentSearch.css";
+import { useOnClickOutside } from "../../../../hook/event";
 
 export function RecentSearch() {
   const fiveRecent = useAtomValue(fiveRecentAtom);
   const deleteRecent = useSetAtom(deleteRecentAtom);
   const setOpenRecent = useSetAtom(openRecentAtom);
   const goPush = useGoPush();
+
+  const recentRef = useRef<HTMLDivElement>(null);
+  const onClickOutside = useCallback(() => {
+    setOpenRecent(false);
+  }, [setOpenRecent]);
+  useOnClickOutside(recentRef, onClickOutside);
 
   const onClickItem = useCallback(
     (word: string) => {
@@ -31,7 +38,7 @@ export function RecentSearch() {
   );
 
   return (
-    <div className="recent-search">
+    <div className="recent-search" ref={recentRef}>
       <div className="menu">
         <button>최근검색</button>
         <button>즐겨찾기</button>
