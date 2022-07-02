@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AppHeader } from "./shared/component/header/AppHeader";
 import { SummonerDetail } from "./summoner/detail/SummonerDetail";
 
@@ -8,6 +8,10 @@ export function AppRoutes() {
       <AppHeader />
       <Routes>
         <Route path="/summoner/:username" element={<SummonerDetail />} />
+        <Route
+          path=""
+          element={<Navigate replace to="/summoner/자메이카의영혼" />}
+        />
       </Routes>
     </BrowserRouter>
   );
