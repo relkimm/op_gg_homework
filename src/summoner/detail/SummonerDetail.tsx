@@ -1,11 +1,11 @@
-import { SummonerGame } from "./game/SummonerGameInfo";
+import { SummonerMatch } from "./match/SummonerMatch";
 import { SummonerProfile } from "./profile/SummonerProfile";
 
 export function SummonerDetail() {
   return (
     <main>
       <SummonerProfile />
-      <SummonerGame />
+      <SummonerMatch />
     </main>
   );
 }
