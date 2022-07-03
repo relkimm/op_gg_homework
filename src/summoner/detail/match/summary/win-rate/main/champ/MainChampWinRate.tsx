@@ -18,8 +18,17 @@ export function MainChampWinRate() {
   return (
     <div className="champ-win-rate">
       <ul>
-        {take(7, champions).map((champion) => (
-          <ChampWinRateItem {...champion} />
+        {take(6, champions).map((champion, idx) => (
+          <ChampWinRateItem
+            key={`${champion.id}_${idx}`}
+            name={champion.name}
+            games={champion.games}
+            kills={champion.kills}
+            deaths={champion.deaths}
+            assists={champion.assists}
+            cs={champion.cs}
+            imageUrl={champion.imageUrl}
+          />
         ))}
       </ul>
     </div>
