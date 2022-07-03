@@ -4,3 +4,4 @@ export const fixed = (fractionDigits: number) => (target: number) => {
 
 export const fixed0 = fixed(0);
 export const fixed1 = fixed(1);
+export const fixed2 = fixed(2);

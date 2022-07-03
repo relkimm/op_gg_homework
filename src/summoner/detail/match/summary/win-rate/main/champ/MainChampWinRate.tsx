@@ -23,6 +23,7 @@ export function MainChampWinRate() {
             key={`${champion.id}_${idx}`}
             name={champion.name}
             games={champion.games}
+            wins={champion.wins}
             kills={champion.kills}
             deaths={champion.deaths}
             assists={champion.assists}

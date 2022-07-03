@@ -1,6 +1,6 @@
-import { fixed0, fixed1 } from "./number";
+import { fixed0, fixed1, fixed2 } from "./number";
 
-export const kdaRate = (games: number) => (kda: number) => fixed1(kda / games);
+export const kdaRate = (games: number) => (kda: number) => fixed2(kda / games);
 
 export const totalRate =
   (games: number) => (kills: number, assists: number, deaths: number) => {
