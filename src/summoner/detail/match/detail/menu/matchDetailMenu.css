@@ -6,6 +6,10 @@
   border: solid 1px #cdd2d2;
 }
 
+.menu .active {
+  color: rgb(65, 113, 214);
+}
+
 .menu > ul {
   display: flex;
 }
