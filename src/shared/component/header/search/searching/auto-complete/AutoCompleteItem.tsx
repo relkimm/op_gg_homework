@@ -1,4 +1,4 @@
-import { Avatar } from "../../../avatar/Avatar";
+import { Avatar } from "../../../../avatar/Avatar";
 import "./autoComplete.css";
 
 interface AutoCompleteItemProps {

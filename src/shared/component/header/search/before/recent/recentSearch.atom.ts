@@ -1,6 +1,6 @@
 import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
-import { take } from "../../../../util/fs";
+import { take } from "../../../../../util/fs";
 
 const recentFromStorage = () => {
   const recentSearch = localStorage.getItem("recent_search");
@@ -20,8 +20,6 @@ export const recentAtom = atomWithStorage<string[]>(
   "recent_search",
   recentFromStorage()
 );
-
-export const openRecentAtom = atom<boolean>(false);
 
 export const fiveRecentAtom = atom((get) => take(5, get(recentAtom)));
 

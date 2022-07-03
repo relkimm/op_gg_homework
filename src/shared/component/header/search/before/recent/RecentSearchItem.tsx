@@ -1,5 +1,3 @@
-import "./recentSearch.css";
-
 interface RecentSearchItemProps {
   idx: number;
   word: string;

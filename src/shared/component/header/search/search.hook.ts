@@ -1,27 +1,34 @@
-import { useSetAtom } from "jotai";
 import { useCallback } from "react";
+import { useSetAtom } from "jotai";
 import { useGoPush } from "../../../hook/route";
-import { openAutoCompleteAtom } from "./auto-complete/autoComplete.atom";
-import { openRecentAtom, saveRecentAtom } from "./recent/recentSearch.atom";
-import { searchWordAtom } from "./searchBar.atom";
+import { saveRecentAtom } from "./before/recent/recentSearch.atom";
+import { searchWordAtom } from "./search-bar/searchBar.atom";
+import { beforeSearchVisibleAtom } from "./before/beforeSearch.atom";
+import { searchingVisibleAtom } from "./searching/searching.atom";
 
 export const useSearch = () => {
   const setSearchWord = useSetAtom(searchWordAtom);
   const saveRecent = useSetAtom(saveRecentAtom);
-  const setOpenRecent = useSetAtom(openRecentAtom);
-  const setOpenAutoComplete = useSetAtom(openAutoCompleteAtom);
+  const setBeforeSearchVisible = useSetAtom(beforeSearchVisibleAtom);
+  const setSearchingVisible = useSetAtom(searchingVisibleAtom);
   const goPush = useGoPush();
 
   return useCallback(
     (searchWord: string) => {
       if (searchWord) {
-        setOpenRecent(false);
-        setOpenAutoComplete(false);
+        setBeforeSearchVisible(false);
+        setSearchingVisible(false);
         setSearchWord("");
         saveRecent(searchWord);
         goPush(`/summoner/${searchWord}`);
       }
     },
-    [setOpenRecent, setOpenAutoComplete, setSearchWord, saveRecent, goPush]
+    [
+      setBeforeSearchVisible,
+      setSearchingVisible,
+      setSearchWord,
+      saveRecent,
+      goPush,
+    ]
   );
 };

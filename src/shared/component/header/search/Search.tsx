@@ -1,19 +1,19 @@
 import { useAtomValue } from "jotai";
-import { AutoComplete } from "./auto-complete/AutoComplete";
-import { openAutoCompleteAtom } from "./auto-complete/autoComplete.atom";
-import { RecentSearch } from "./recent/RecentSearch";
-import { openRecentAtom } from "./recent/recentSearch.atom";
-import { SearchBar } from "./SearchBar";
+import { beforeSearchVisibleAtom } from "./before/beforeSearch.atom";
+import { searchingVisibleAtom } from "./searching/searching.atom";
+import { AutoComplete } from "./searching/auto-complete/AutoComplete";
+import { BeforeSearch } from "./before/BeforeSearch";
+import { SearchBar } from "./search-bar/SearchBar";
 
 export function Search() {
-  const openRecent = useAtomValue(openRecentAtom);
-  const openAutoComplete = useAtomValue(openAutoCompleteAtom);
+  const beforeSearchVisible = useAtomValue(beforeSearchVisibleAtom);
+  const searchingVisible = useAtomValue(searchingVisibleAtom);
 
   return (
     <div className="search">
       <SearchBar />
-      {openRecent && !openAutoComplete && <RecentSearch />}
-      {openAutoComplete && <AutoComplete />}
+      {beforeSearchVisible && !searchingVisible && <BeforeSearch />}
+      {searchingVisible && <AutoComplete />}
     </div>
   );
 }
