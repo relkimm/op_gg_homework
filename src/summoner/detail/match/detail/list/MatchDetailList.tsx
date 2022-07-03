@@ -1,4 +1,4 @@
-export function TeamMatchList() {
+export function MatchDetailList() {
   return (
     <div className="summoner-pvp-detail">
       <ul>
