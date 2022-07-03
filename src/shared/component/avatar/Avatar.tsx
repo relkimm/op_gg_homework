@@ -1,4 +1,5 @@
 import { DefaultAvatar } from "../../constant";
+import "./avatar.css";
 
 type AvatarSize = "sm" | "md" | "lg";
 
