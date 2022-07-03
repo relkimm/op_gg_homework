@@ -2,6 +2,7 @@ import axios from "axios";
 import { MatchType } from "../../summoner/detail/match/detail/matchDetailArticle.hook";
 import { AxiosReturn } from "../axios";
 import { Champion } from "../model/Champion";
+import { Game } from "../model/Game";
 import { Position } from "../model/Position";
 import { RecentWinRate } from "../model/RecentWinRate";
 import { Summary } from "../model/Summary";
@@ -20,7 +21,7 @@ interface MostInfoResponse {
 
 interface MatchesResponse {
   champions: Champion[];
-  games: [];
+  games: Game[];
   positions: Position[];
   summary: Summary;
 }

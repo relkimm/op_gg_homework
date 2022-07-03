@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { TierIcon } from "../../../../../shared/component/icon/TierIcon";
 import { isUndefined } from "../../../../../shared/util/fs";
 import { useFindSummoner } from "../../../profile/summonerProfile.hook";
 import { SummonerDetailParams } from "../../../summonerDetail.params";
@@ -11,13 +12,11 @@ export function TeamRank() {
   }
 
   const { leagues } = summoner;
-  const { wins, losses, tierRank } = leagues[0];
+  const { tierRank } = leagues[1];
 
   return (
     <div className="team-rank">
-      <div className="icon">
-        <img src={tierRank.imageUrl} alt="" />
-      </div>
+      <TierIcon size="md" imageUrl={tierRank.imageUrl} />
       <div className="info">
         <ul>
           <li>

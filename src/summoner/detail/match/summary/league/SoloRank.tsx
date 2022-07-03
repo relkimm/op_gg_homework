@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
+import { TierIcon } from "../../../../../shared/component/icon/TierIcon";
 import { isUndefined } from "../../../../../shared/util/fs";
+import { RateCalculator } from "../../../../../shared/util/rate";
 import { useFindSummoner } from "../../../profile/summonerProfile.hook";
 import { SummonerDetailParams } from "../../../summonerDetail.params";
 
@@ -13,18 +15,19 @@ export function SoloRank() {
   const { leagues } = summoner;
   const { wins, losses, tierRank } = leagues[0];
 
+  const games = wins + losses;
+  const { win } = RateCalculator(games);
+
   return (
     <div className="solo-rank">
-      <div className="icon">
-        <img src={tierRank.imageUrl} alt="" />
-      </div>
+      <TierIcon size="lg" imageUrl={tierRank.imageUrl} />
       <div className="info">
         <ul>
           <li>
             <span>솔로 랭크</span>
           </li>
           <li>
-            <span>탑 {`(총 ${wins + losses} 게임)`}</span>
+            <span>탑 {`(총 ${games} 게임)`}</span>
           </li>
           <li>
             <span>
@@ -33,11 +36,11 @@ export function SoloRank() {
           </li>
           <li>
             <span>
-              {tierRank.lp} / {`${wins}승 ${losses}패`}
+              {tierRank.lp} lp / {`${wins}승 ${losses}패`}
             </span>
           </li>
           <li>
-            <span>{`승률 ${(wins / losses + wins) * 100}`}</span>
+            <span>{`승률 ${win(wins)}%`}</span>
           </li>
         </ul>
       </div>

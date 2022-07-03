@@ -1,9 +1,14 @@
-.summoner-pvp-detail {
+.match-detail-list {
+  position: relative;
   height: 100%;
 }
 
-.summoner-pvp-detail > ul > li {
+.match-detail-list > ul > li {
   height: 96px;
   margin-bottom: 8px;
   background-color: #d6b5b2;
+}
+
+.match-detail-list .isWin {
+  background-color: #5383e8;
 }
