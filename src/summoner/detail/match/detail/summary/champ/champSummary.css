@@ -1,0 +1,48 @@
+.champion-summary {
+  width: 228px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  border-right: solid 1px #cdd2d2;
+}
+
+.champion-summary > ul > li {
+  display: flex;
+}
+
+.champion-summary .avatar-sm {
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+
+.champion-summary .avatar-sm > img {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #cdd2d2;
+  border-radius: 50%;
+}
+
+.champion-summary .name {
+  margin-bottom: 3px;
+}
+
+.champion-summary .name > span {
+  font-size: 14px;
+  font-family: NanumBarunGothicOTF;
+  color: #333333;
+}
+
+.champion-summary .rate .win {
+  font-size: 11px;
+  font-family: Helvetica;
+  padding-right: 6px;
+  border-right: solid 1px #cdd2d2;
+}
+
+.champion-summary .rate .average {
+  font-size: 11px;
+  font-family: Helvetica;
+  padding-left: 6px;
+}

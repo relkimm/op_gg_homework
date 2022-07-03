@@ -1,12 +1,12 @@
-import { MatchDetail } from "./detail/MatchDetail";
-import { MatchSummary } from "./summary/MatchSummary";
+import { MatchDetailArticle } from "./detail/MatchDetailArticle";
+import { MatchSummaryAside } from "./summary/MatchSummaryAside";
 import "./summonerMatch.css";
 
 export function SummonerMatch() {
   return (
     <div className="summoner-match">
-      <MatchSummary />
-      <MatchDetail />
+      <MatchSummaryAside />
+      <MatchDetailArticle />
     </div>
   );
 }

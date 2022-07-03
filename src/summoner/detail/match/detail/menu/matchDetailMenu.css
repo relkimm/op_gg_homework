@@ -1,0 +1,19 @@
+.menu {
+  height: 36px;
+  line-height: 36px;
+  padding-left: 16px;
+  background-color: #f2f2f2;
+  border: solid 1px #cdd2d2;
+}
+
+.menu > ul {
+  display: flex;
+}
+
+.menu > ul > li {
+  margin-right: 24px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 12px;
+  color: #555555;
+  cursor: pointer;
+}

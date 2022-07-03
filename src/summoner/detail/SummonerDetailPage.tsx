@@ -1,7 +1,7 @@
 import { SummonerMatch } from "./match/SummonerMatch";
 import { SummonerProfile } from "./profile/SummonerProfile";
 
-export function SummonerDetail() {
+export function SummonerDetailPage() {
   return (
     <main>
       <SummonerProfile />
