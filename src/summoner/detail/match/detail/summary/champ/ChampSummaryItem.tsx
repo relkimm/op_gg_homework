@@ -1,20 +1,29 @@
 import { Avatar } from "../../../../../../shared/component/avatar/Avatar";
+import { RateCalculator } from "../../../../../../shared/util/rate";
 
 interface ChampSummaryItemProps {
   name: string;
   imageUrl: string;
+  games: number;
   wins: number;
   losses: number;
-  average: number;
+  kills: number;
+  assists: number;
+  deaths: number;
 }
 
 export function ChampSummaryItem({
   name,
   imageUrl,
+  games,
   wins,
   losses,
-  average,
+  kills,
+  assists,
+  deaths,
 }: ChampSummaryItemProps) {
+  const { win, total } = RateCalculator(games);
+
   return (
     <li>
       <Avatar size="sm" imageUrl={imageUrl} />
@@ -24,10 +33,10 @@ export function ChampSummaryItem({
         </div>
         <div className="rate">
           <span className="win">
-            <b>100%</b> ({wins}승 {losses}패)
+            <b>{win(wins)}%</b> ({wins}승 {losses}패)
           </span>
           <span className="average">
-            <b>{average} 평점</b>
+            <b>{total(kills, assists, deaths)} 평점</b>
           </span>
         </div>
       </div>
