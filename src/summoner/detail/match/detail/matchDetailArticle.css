@@ -1,14 +1,4 @@
-.main-content {
+.match-detail {
   width: 690px;
   height: 100%;
-}
-
-.summoner-pvp-detail {
-  height: 100%;
-}
-
-.summoner-pvp-detail > ul > li {
-  height: 96px;
-  margin-bottom: 8px;
-  background-color: #d6b5b2;
 }

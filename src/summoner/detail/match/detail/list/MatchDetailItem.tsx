@@ -1,3 +1,8 @@
 export function MatchDetailItem() {
-  return <div></div>;
+  return (
+    <li>
+      <div></div>
+      <div></div>
+    </li>
+  );
 }

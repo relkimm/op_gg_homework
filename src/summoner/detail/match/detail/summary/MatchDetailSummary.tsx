@@ -5,7 +5,7 @@ import "./matchDetailSummary.css";
 
 export function MatchDetailSummary() {
   return (
-    <div className="summoner-pvp-summary">
+    <div className="match-detail-summary">
       <RecentSummary />
       <ChampSummary />
       <PositionSummary />

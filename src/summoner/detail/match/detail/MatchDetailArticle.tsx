@@ -5,7 +5,7 @@ import "./matchDetailArticle.css";
 
 export function MatchDetailArticle() {
   return (
-    <article className="main-content">
+    <article className="match-detail">
       <MatchDetailMenu />
       <MatchDetailSummary />
       <MatchDetailList />

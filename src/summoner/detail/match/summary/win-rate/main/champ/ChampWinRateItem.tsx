@@ -1,6 +1,5 @@
-import { useCallback } from "react";
 import { Avatar } from "../../../../../../../shared/component/avatar/Avatar";
-import { fixed1 } from "../../../../../../../shared/util/string";
+import { RateCalculator } from "../../../../../../../shared/util/rate";
 
 interface ChampWinRateItemProps {
   name: string;
@@ -21,33 +20,19 @@ export function ChampWinRateItem({
   assists,
   games,
 }: ChampWinRateItemProps) {
-  const average = useCallback(
-    (target: number) => {
-      return target / games;
-    },
-    [games]
-  );
-
-  const fixedAverage = (target: number) => {
-    return fixed1(average(target));
-  };
-
-  const kdaAverage = () => {
-    return fixed1((average(kills) + average(assists)) / average(deaths));
-  };
+  const { kda, total } = RateCalculator(games);
 
   return (
     <li className="champ-item">
       <Avatar size="md" imageUrl={imageUrl} />
       <div className="champ-info">
         <div className="name">{name}</div>
-        <div className="cs">CS {fixedAverage(cs)} (2.4)</div>
+        <div className="cs">CS {cs} (2.4)</div>
       </div>
       <div className="kda-info">
-        <div className="average">{kdaAverage()}:1 평점</div>
+        <div className="average">{total(kills, assists, deaths)}:1 평점</div>
         <div className="detail">
-          {fixedAverage(kills)} / {fixedAverage(assists)} /{" "}
-          {fixedAverage(deaths)}
+          {kda(kills)} / {kda(assists)} / {kda(deaths)}
         </div>
       </div>
       <div className="game-info">

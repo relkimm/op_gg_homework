@@ -1,14 +1,14 @@
+import { MatchDetailItem } from "./MatchDetailItem";
+import "./matchDetailList.css";
+
 export function MatchDetailList() {
   return (
     <div className="summoner-pvp-detail">
       <ul>
-        <li>
-          <div></div>
-          <div></div>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <MatchDetailItem />
+        <MatchDetailItem />
+        <MatchDetailItem />
+        <MatchDetailItem />
       </ul>
     </div>
   );
